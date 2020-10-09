@@ -8,15 +8,40 @@ https://medium.com/better-programming/5-ways-to-reverse-a-string-in-javascript-4
 
 Lägg märke till att ni måste hantera mellanslag. "Ni talar bra latin" är t ex ett palindrom. Ni behöver bara hantera små bokstäver.
 
-*/
+
 
 function is_palindrome() {
 
 }
 
 let test_string = 'sirap i paris';
-if ( is_palindrome( test_string ) ) {
-    console.log( test_string + " is a palindrome" );
+if (is_palindrome(test_string)) {
+    console.log(test_string + " is a palindrome");
 } else {
-    console.log( test_string + " is NOT a palindrome" );
+    console.log(test_string + " is NOT a palindrome");
+}
+
+*/
+
+
+function is_palindrome(str) {
+
+    var re = /[^A-Za-z0-9]/g;
+    str = str.toLowerCase().replace(re, '');
+    var len = str.length;
+    for (var i = 0; i < len / 2; i++) {
+        
+        if (str[i] !== str[len - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+let test_string = 'sirap i paris';
+if (is_palindrome(test_string)) {
+    console.log(test_string + " is a palindrome");
+} else {
+    console.log(test_string + " is NOT a palindrome");
 }

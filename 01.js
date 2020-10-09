@@ -8,3 +8,19 @@ FizzBuzz är ett elementärt programmeringsproblem där man skriver ut tal i en 
 
 */
 
+let fizzbuzz = [];
+
+for (let i = 0; i <= 100; i++) {
+    if ((i % 3 === 0) && (i % 5 === 0)) {
+        fizzbuzz.push(i + " fizzbuzz");
+    }
+    else if (i % 3 === 0) {
+        fizzbuzz.push(i + " fizz");
+    }
+    else if (i % 5 === 0) {
+        fizzbuzz.push(i + " buzz");
+    }
+}
+
+console.log(fizzbuzz)
+

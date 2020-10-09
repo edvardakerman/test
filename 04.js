@@ -18,7 +18,39 @@ Exempel på värden och deras svar:
 
 */
 
-function get_average_sum() {
-    
+
+
+
+
+
+
+
+  
+
+
+
+let NumArray = [2,3,4,5,8,6,7]
+
+function get_average_sum(NumArray) {
+    if(NumArray.some(i => !Number.isInteger(i)) ){
+        return false;
+    }
+
+    if (NumArray.length <= 2 || NumArray.length >= 10) {
+        return false
+    }
+    const sum = NumArray.reduce((acc, currValue, currIndex, array) => {
+        return acc + currValue
+    });
+   let avg_sum = { total: sum, avg: sum / NumArray.length }
+   console.log(avg_sum);
 }
+
+//Reduce, ett värde från hela
+
+// return { total: acc + currValue, avg: (acc + currValue) / NumArray.length }
+
+//acc + currValue
+
+get_average_sum(NumArray)
 
